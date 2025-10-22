@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects —  RAYYANTECH SOLAR SYSTEMS</title>
+  <meta name="description" content="Portfolio of RAYYANTECH solar installations and case studies." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>@keyframes fadeUp{0%{opacity:0;transform:translateY(18px)}100%{opacity:1;transform:translateY(0)}} .fade-up{animation:fadeUp .8s ease-out both}</style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+  <header class="fixed w-full z-50 bg-white/90 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-3"><img src="https://cdn-icons-png.flaticon.com/512/979/979585.png" class="w-10 h-10"><span class="text-2xl font-bold text-yellow-500">RAYYANTECH</span></a>
+      <nav class="hidden md:flex gap-6"><a href="index.html" class="nav-link">Home</a><a href="services.html" class="nav-link">Services</a><a href="projects.html" class="nav-link">Projects</a><a href="contact.html" class="nav-link">Contact</a></nav>
+    </div>
+  </header>
+
+  <main class="pt-28">
+    <section class="bg-white py-8 shadow-sm">
+      <div class="max-w-6xl mx-auto px-6">
+        <h1 class="text-3xl font-bold">Projects & Portfolio</h1>
+        <p class="text-sm text-gray-500 mt-1">Home / Projects</p>
+      </div>
+    </section>
+
+    <section class="py-12">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-2xl font-bold mb-6">Recent Installations</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Project card with before/after -->
+          <article class="bg-white rounded-2xl shadow overflow-hidden">
+            <div class="relative">
+              <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1200&q=80" alt="before" class="w-full h-48 object-cover">
+              <div class="absolute top-3 left-3 bg-yellow-500 text-white text-xs px-2 py-1 rounded">Residential</div>
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold mb-1">Solar Rooftop — Lagos Home</h3>
+              <p class="text-sm text-gray-600 mb-3">5kW system with 10kWh storage — reduced bills by ~70%.</p>
+              <a href="#" class="text-yellow-500 font-medium">View case study →</a>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-2xl shadow overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1506466010722-395aa2bef877?auto=format&fit=crop&w=1200&q=80" alt="site" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h3 class="font-semibold mb-1">Community Microgrid — Ogun</h3>
+              <p class="text-sm text-gray-600 mb-3">Hybrid microgrid powering 10 homes with monitoring dashboard.</p>
+              <a href="#" class="text-yellow-500 font-medium">View case study →</a>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-2xl shadow overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1592803307448-42e8b9e5a0b8?auto=format&fit=crop&w=1200&q=80" alt="site" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h3 class="font-semibold mb-1">Small Business — Retail</h3>
+              <p class="text-sm text-gray-600 mb-3">Back-up & daytime savings solution with monitoring alerts.</p>
+              <a href="#" class="text-yellow-500 font-medium">View case study →</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Before & After gallery -->
+        <h3 class="text-xl font-bold mt-12 mb-4">Before / After Gallery</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white rounded-2xl shadow overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80" alt="before" class="w-full h-56 object-cover">
+            <div class="p-4">
+              <p class="text-sm text-gray-600">Before: original rooftop</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl shadow overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1505731132164-cca6b2b9d71b?auto=format&fit=crop&w=1200&q=80" alt="after" class="w-full h-56 object-cover">
+            <div class="p-4">
+              <p class="text-sm text-gray-600">After: panels installed</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl shadow overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1581091870622-81c80b032d75?auto=format&fit=crop&w=1200&q=80" alt="monitor" class="w-full h-56 object-cover">
+            <div class="p-4">
+              <p class="text-sm text-gray-600">Monitoring dashboard & live stats</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-6 py-12 text-center">
+      <a href="contact.html#quote" class="bg-yellow-500 text-white px-5 py-3 rounded-lg font-semibold">Get a site survey</a>
+    </div>
+  </main>
+
+  <footer class="bg-gray-900 text-gray-300 py-8 text-center">© 2025  RAYYANTECH SOLAR SYSTEMS</footer>
+
+  <script>
+    document.querySelectorAll('.nav-link').forEach(a => { if (a.href.includes('projects.html')) a.classList.add('text-yellow-500','font-semibold'); });
+  </script>
+</body>
+</html>

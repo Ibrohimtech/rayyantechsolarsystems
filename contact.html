@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact —  RAYYANTECH SOLAR SYSTEMS</title>
+  <meta name="description" content="Contact RAYYANTECH for quotes, service requests, and partnerships." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>@keyframes fadeUp{0%{opacity:0;transform:translateY(18px)}100%{opacity:1;transform:translateY(0)}} .fade-up{animation:fadeUp .8s ease-out both}</style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+  <header class="fixed w-full z-50 bg-white/90 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-3"><img src="https://cdn-icons-png.flaticon.com/512/979/979585.png" class="w-10 h-10"><span class="text-2xl font-bold text-yellow-500">RAYYANTECH</span></a>
+      <nav class="hidden md:flex gap-6"><a href="index.html" class="nav-link">Home</a><a href="services.html" class="nav-link">Services</a><a href="contact.html" class="nav-link">Contact</a></nav>
+    </div>
+  </header>
+
+  <main class="pt-28">
+    <section class="bg-white py-8 shadow-sm">
+      <div class="max-w-6xl mx-auto px-6">
+        <h1 class="text-3xl font-bold">Contact Us</h1>
+        <p class="text-sm text-gray-500 mt-1">Home / Contact</p>
+      </div>
+    </section>
+
+    <section class="py-12">
+      <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8">
+        <!-- Map -->
+        <div class="fade-up">
+          <h3 class="text-xl font-semibold mb-3">Our Location</h3>
+          <!-- Replace embed src with your Google Maps embed link -->
+          <div class="rounded-lg overflow-hidden shadow">
+            <iframe class="w-full h-96" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.5734683037485!2d3.3792058749982274!3d7.074832292918405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103a3f5c1b2f5b8d%3A0x93f11f6eaec2ad21!2sOgun%20State%2C%20Nigeria!5e0!3m2!1sen!2sng!4v1697388270000!5m2!1sen!2sng" loading="lazy"></iframe>
+          </div>
+
+          <div class="mt-6">
+            <p class="text-sm text-gray-700">Phone: <a href="tel:+2348012345678" class="text-yellow-500">+234 801 234 5678</a></p>
+            <p class="text-sm text-gray-700">Email: <a href="mailto:info@rayyantech.com" class="text-yellow-500">info@rayyantech.com</a></p>
+            <a href="https://wa.me/2348012345678" target="_blank" class="inline-flex items-center gap-2 mt-4 bg-green-500 text-white px-4 py-2 rounded-lg">💬 Chat on WhatsApp</a>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="fade-up">
+          <h3 class="text-xl font-semibold mb-3">Send a Message / Request a Quote</h3>
+          <!-- Simple form (no backend). Set action to your endpoint or use formspree / google form -->
+          <form id="contactForm" class="bg-white p-6 rounded-2xl shadow space-y-4" onsubmit="submitForm(event)">
+            <label class="block">
+              <span class="text-sm font-medium text-gray-700">Full name</span>
+              <input id="name" type="text" required class="mt-1 block w-full p-3 rounded-lg border border-gray-200 focus:ring-yellow-400" placeholder="Jane Doe">
+            </label>
+            <label class="block">
+              <span class="text-sm font-medium text-gray-700">Email</span>
+              <input id="email" type="email" required class="mt-1 block w-full p-3 rounded-lg border border-gray-200" placeholder="you@example.com">
+            </label>
+            <label class="block">
+              <span class="text-sm font-medium text-gray-700">Phone</span>
+              <input id="phone" type="tel" class="mt-1 block w-full p-3 rounded-lg border border-gray-200" placeholder="+234 801 234 5678">
+            </label>
+            <label class="block">
+              <span class="text-sm font-medium text-gray-700">Location</span>
+              <input id="location" type="text" class="mt-1 block w-full p-3 rounded-lg border border-gray-200" placeholder="City / Address">
+            </label>
+            <label class="block">
+              <span class="text-sm font-medium text-gray-700">Energy needs / Message</span>
+              <textarea id="message" rows="4" class="mt-1 block w-full p-3 rounded-lg border border-gray-200" placeholder="Tell us about your energy needs..."></textarea>
+            </label>
+
+            <div class="flex gap-3">
+              <button type="submit" class="bg-yellow-500 text-white px-5 py-3 rounded-lg font-semibold">Send Message</button>
+              <a href="https://wa.me/2348012345678" target="_blank" class="inline-flex items-center gap-2 bg-green-500 text-white px-4 py-3 rounded-lg">Chat on WhatsApp</a>
+            </div>
+            <p id="formMsg" class="text-sm text-green-600 hidden">Thanks — your message was sent (simulated).</p>
+          </form>
+
+          <!-- Quick Google Form embed (optional) -->
+          <div class="mt-6">
+            <h4 class="font-semibold mb-2">Quick Form</h4>
+            <!-- Replace src with your Google Form embed URL -->
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeEXAMPLEFORMURL/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-gray-900 text-gray-300 py-8 text-center">© 2025  RAYYANTECH SOLAR SYSTEMS</footer>
+
+  <script>
+    // placeholder form submit (no backend). Replace with API / form service integration.
+    function submitForm(e){
+      e.preventDefault();
+      // simple front-end validation example
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      if(!name || !email) { alert('Please provide name and email'); return; }
+      // Normally you would send via fetch() to your backend endpoint or service
+      document.getElementById('formMsg').classList.remove('hidden');
+      // reset form (optional)
+      e.target.reset();
+    }
+    document.querySelectorAll('.nav-link').forEach(a=>{ if (a.href.includes('contact.html')) a.classList.add('text-yellow-500','font-semibold') });
+  </script>
+</body>
+</html>
