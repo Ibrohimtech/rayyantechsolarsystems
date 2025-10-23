@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAYYANTECH | Projects / Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Header -->
+  <header class="bg-yellow-500 text-white py-4 shadow-md">
+    <h1 class="text-3xl font-bold text-center">RAYYANTECH Projects / Portfolio</h1>
+  </header>
+
+  <!-- Project Cards -->
+  <main class="max-w-6xl mx-auto py-12 px-6">
+    <h2 class="text-2xl md:text-3xl font-bold text-center mb-10">Our Recent Installations</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Card 1 -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition text-center p-6">
+        <img src="https://source.unsplash.com/400x250/?solar,rooftop" class="w-full rounded-md mb-4" alt="">
+        <h3 class="text-xl font-semibold mb-2">Residential Solar Project</h3>
+        <p class="text-gray-600 mb-4">Off-grid solar installation for a modern home.</p>
+        <button onclick="loadCaseStudy('residential')" 
+                class="bg-yellow-500 hover:bg-yellow-600 text-white px-5 py-2 rounded-lg transition">
+          View Case Study
+        </button>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition text-center p-6">
+        <img src="https://source.unsplash.com/400x250/?solar,installation" class="w-full rounded-md mb-4" alt="">
+        <h3 class="text-xl font-semibold mb-2">Commercial Solar Project</h3>
+        <p class="text-gray-600 mb-4">50kW hybrid system powering business operations.</p>
+        <button onclick="loadCaseStudy('commercial')" 
+                class="bg-yellow-500 hover:bg-yellow-600 text-white px-5 py-2 rounded-lg transition">
+          View Case Study
+        </button>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition text-center p-6">
+        <img src="https://source.unsplash.com/400x250/?solar,field" class="w-full rounded-md mb-4" alt="">
+        <h3 class="text-xl font-semibold mb-2">Community Solar Project</h3>
+        <p class="text-gray-600 mb-4">Mini-grid powering rural community homes.</p>
+        <button onclick="loadCaseStudy('community')" 
+                class="bg-yellow-500 hover:bg-yellow-600 text-white px-5 py-2 rounded-lg transition">
+          View Case Study
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal Overlay -->
+  <div id="modal" class="fixed inset-0 bg-black bg-opacity-70 hidden items-center justify-center z-50">
+    <div class="bg-white rounded-xl max-w-4xl w-full p-6 relative animate-fadeIn">
+      <button onclick="closeModal()" 
+              class="absolute top-2 right-2 bg-gray-200 hover:bg-gray-300 rounded-full p-2">
+        ✕
+      </button>
+      <h2 id="modalTitle" class="text-2xl font-bold text-center mb-6">Case Study</h2>
+
+      <!-- Gallery -->
+      <div id="gallery" class="grid md:grid-cols-3 gap-4">
+        <!-- Images will load here -->
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-gray-900 text-white text-center py-4">
+    <p>&copy; 2025 RAYYANTECH. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const modal = document.getElementById("modal");
+    const gallery = document.getElementById("gallery");
+    const modalTitle = document.getElementById("modalTitle");
+
+    async function loadCaseStudy(type) {
+  modal.classList.remove("hidden");
+  modal.classList.add("flex");
+  modalTitle.textContent = `${type.charAt(0).toUpperCase() + type.slice(1)} Solar Project`;
+  gallery.innerHTML = "<p class='col-span-3 text-center text-gray-600'>Loading photos...</p>";
+
+  try {
+    // ✅ Use your actual API endpoint
+    const response = await fetch("https://api.npoint.io/4107ad36219c358b7e15");
+    const data = await response.json();
+
+    // ✅ Use the "photos" array from your JSON
+    gallery.innerHTML = data.photos.map(photo => `
+      <div class="bg-white rounded-lg shadow overflow-hidden">
+        <img src="${photo.url}" alt="${photo.caption}" class="w-full h-48 object-cover">
+        <div class="p-2 text-sm text-gray-700">${photo.caption}</div>
+      </div>
+    `).join('');
+  } catch (error) {
+    console.error("Error loading photos:", error);
+    gallery.innerHTML = "<p class='col-span-3 text-center text-red-500'>Failed to load images.</p>";
+  }
+}
+
+    function closeModal() {
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    }
+  </script>
+
+  <!-- Simple fade animation -->
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .animate-fadeIn {
+      animation: fadeIn 0.3s ease-in-out;
+    }
+  </style>
+</body>
+</html>
