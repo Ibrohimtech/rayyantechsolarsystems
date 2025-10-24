@@ -41,7 +41,7 @@
         <a href="projects.html" class="font-medium">Projects</a>
         <a href="blog.html" class="font-medium">Blog</a>
         <a href="faq.html" class="font-medium">FAQs</a>
-        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="shop.html" class="font-medium">Shop</a>
         <a href="contact.html" class="font-medium">Contact</a>
       </div>
     </div>
@@ -52,7 +52,7 @@
     <section class="bg-white py-8 shadow-sm">
       <div class="max-w-6xl mx-auto px-6">
         <h1 class="text-3xl font-bold">Contact Us</h1>
-        <p class="text-sm text-gray-500 mt-1">Home / Contact</p>
+        
       </div>
     </section>
 
@@ -113,6 +113,40 @@
 
   <footer class="bg-gray-900 text-gray-300 py-8 text-center">© 2025  RAYYANTECH SOLAR SYSTEMS</footer>
 
+  <script>
+    // Sticky header on scroll
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) header.classList.add('is-sticky','shadow');
+      else header.classList.remove('is-sticky','shadow');
+    });
+
+    // Mobile nav toggle
+    const mobileBtn = document.getElementById('mobileBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    mobileBtn.addEventListener('click', ()=> mobileNav.classList.toggle('hidden'));
+
+    // Active nav link simple highlight (based on pathname)
+    const links = document.querySelectorAll('.nav-link');
+    links.forEach(a => {
+      if (a.getAttribute('href') === window.location.pathname.split('/').pop() || (a.getAttribute('href') === 'index.html' && window.location.pathname.endsWith('/'))) {
+        a.classList.add('text-yellow-500','font-semibold');
+      }
+    });
+  </script>
+  <script>
+  const header = document.getElementById("site-header");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      header.classList.add("bg-yellow-600", "py-2", "shadow-lg");
+      header.classList.remove("py-4");
+    } else {
+      header.classList.add("py-4");
+      header.classList.remove("bg-yellow-600", "py-2", "shadow-lg");
+    }
+  });
+</script>
+  
   <script>
     // placeholder form submit (no backend). Replace with API / form service integration.
     function submitForm(e){
