@@ -10,12 +10,12 @@
 </head>
 <body class="antialiased text-gray-800 bg-gray-50">
 
-  <!-- Header include (same as index) -->
-  <header class="fixed w-full z-50 bg-white/80 shadow-sm">
+  <!-- NAV -->
+  <header id="site-header" class="fixed w-full z-50 transition-all bg-yellow-600 fixed top-0 left-0 w-full  py-4 shadow-md z-50">
     <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
       <a href="index.html" class="flex items-center gap-3">
         <img src="https://cdn-icons-png.flaticon.com/512/979/979585.png" alt="logo" class="w-10 h-10">
-        <span class="text-2xl font-bold text-yellow-500">RAYYANTECH</span>
+        <span class="text-2xl font-bold text-yellow-500"> RAYYANTECH SOLAR SYSTEMS</span>
       </a>
       <nav class="hidden md:flex items-center gap-6 text-gray-700 font-medium">
         <a href="index.html" class="nav-link">Home</a>
@@ -24,10 +24,30 @@
         <a href="projects.html" class="nav-link">Projects</a>
         <a href="blog.html" class="nav-link">Blog</a>
         <a href="faq.html" class="nav-link">FAQs</a>
-        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="contact.html" class="font-medium">Contact</a>
       </nav>
+      <div class="flex items-center gap-3">
+        <a href="contact.html#quote" class="hidden md:inline-block bg-yellow-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-yellow-600">Get a Free Quote</a>
+        <!-- Mobile menu button -->
+        <button id="mobileBtn" class="md:hidden p-2 rounded-md focus:outline-none"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"/></svg></button>
+      </div>
+    </div>
+    <!-- Mobile nav -->
+    <div id="mobileNav" class="hidden md:hidden bg-white/95 border-t">
+      <div class="flex flex-col px-6 py-4 gap-3">
+        <a href="index.html" class="font-medium">Home</a>
+        <a href="about.html" class="font-medium">About</a>
+        <a href="services.html" class="font-medium">Products & Services</a>
+        <a href="projects.html" class="font-medium">Projects</a>
+        <a href="blog.html" class="font-medium">Blog</a>
+        <a href="faq.html" class="font-medium">FAQs</a>
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="contact.html" class="font-medium">Contact</a>
+      </div>
     </div>
   </header>
+  <div class="h-20"></div> <!-- space for the fixed header -->
 
   <main class="pt-28">
     <!-- Title & Breadcrumbs -->
@@ -136,6 +156,27 @@
     // set active nav link
     document.querySelectorAll('.nav-link').forEach(a => {
       if (a.href.includes('about.html')) a.classList.add('text-yellow-500','font-semibold');
+    });
+  </script>
+  <script>
+    // Sticky header on scroll
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) header.classList.add('is-sticky','shadow');
+      else header.classList.remove('is-sticky','shadow');
+    });
+
+    // Mobile nav toggle
+    const mobileBtn = document.getElementById('mobileBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    mobileBtn.addEventListener('click', ()=> mobileNav.classList.toggle('hidden'));
+
+    // Active nav link simple highlight (based on pathname)
+    const links = document.querySelectorAll('.nav-link');
+    links.forEach(a => {
+      if (a.getAttribute('href') === window.location.pathname.split('/').pop() || (a.getAttribute('href') === 'index.html' && window.location.pathname.endsWith('/'))) {
+        a.classList.add('text-yellow-500','font-semibold');
+      }
     });
   </script>
 </body>
